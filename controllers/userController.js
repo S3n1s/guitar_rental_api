@@ -1,9 +1,9 @@
-const User = require('./models/User');
+const User = require('../models/User');
 
 exports.getUser = async (req, res) => {
   try {
-    const {id} = req.param;
-    const user = await User.findOne(id);
+    const {id} = req.params;
+    const user = await User.findOne({ _id: id });
     res.json(user);
   } catch (err) {
     res.status(400).json({ message: err.message });
@@ -12,8 +12,8 @@ exports.getUser = async (req, res) => {
 
 exports.deleteUser = async (req, res) => {
   try {
-    const {id} = req.param;
-    const user = await User.findOneAndRemove (id);
+    const {id} = req.params;
+    const user = await User.findOneAndRemove ({ _id: id });
     res.status(200);
   } catch (err) {
     res.status(400).json({ message: err.message });
@@ -22,8 +22,8 @@ exports.deleteUser = async (req, res) => {
 
 exports.putUser = async (req, res) => {
   try {
-    const {id} = req.param;
-    const user = await User.findOne(id);
+    const {id} = req.params;
+    const user = await User.findOneAndUpdate({ _id: id }, req.body);
     res.json(user);
   } catch (err) {
     res.status(400).json({ message: err.message });
