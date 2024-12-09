@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 
 const authRoutes = require('./routes/authRoutes');
-const rentalRoutes = require('./routes/rentalRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 dotenv.config();
 
@@ -19,7 +19,7 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((err) => console.error('Erro ao conectar ao MongoDB:', err));
 
 app.use('/api/auth', authRoutes);
-app.use('/api/rentals', rentalRoutes);
+app.use('/api/users', userRoutes);
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
