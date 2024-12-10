@@ -99,8 +99,9 @@ This project is a user CRUD from a Back End challenge of Dataside
   {
     "name": "fulano",
     "email": "fulano@example.com",
-    "dateOfBirth": "1967-07-01"
-  }
+    "dateOfBirth": "1967-07-01",
+    "sort": ["name", "-dateOfBirth"]
+ }
 ```
   
 **- Response example:**
