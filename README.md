@@ -7,7 +7,7 @@ This project is a user CRUD from a Back End challenge of Dataside
     - Node: (^22.12.0)
     - MongoDB Comunity: (^8.0.4)
 - *Run MongoDB:*
-    - Create data directory on locale of yout preference
+    - Create data directory on local of yout preference
     - run mongod --dbpath <path to data directory>
 - *Install Dependences:*
     - npm install
@@ -17,18 +17,18 @@ This project is a user CRUD from a Back End challenge of Dataside
 
 ## Project Structure
 
-**|server.js      # Main file to start the server**  
-**|-/config       # Database configuration**  
-**|-/controllers  # Endpoint logic**  
-**|-/db           #**  
-**|-/middleware   # Authentication and validation middleware**    
-**|-/routes       # Route definition**  
-**|-/models       # Modelos de dados (Mongoose)**    
+**|server.js**      # Main file to start the server  
+**|-/config**       # Database configuration   
+**|-/controllers**  # Endpoint logic   
+**|-/db**           #  
+**|-/middleware**   # Authentication and validation middleware    
+**|-/routes**       # Route definition  
+**|-/models**       # Modelos de dados (Mongoose)  
 
 ## Routes
 
 
-- **Create User:** 
+ **1.** **Create User:** 
   - Method: `POST`
   - URL: `HTTP://localhost:5000/api/auth/register`
   - Body: (Select `raw` and `JSON`)
@@ -55,7 +55,7 @@ json
     "message": "Usuário registrado com sucesso!"
 }
 ```
-- **User Login**
+**2.** **User Login**
   -  Method: `Post`
   -  URL: `HTTP://localhost:5000/api/auth/login`
   - Body: (Select `raw` and `JSON`)
@@ -88,7 +88,7 @@ json
 }
 }
 ```
-- **List All Users:**
+**3.** **List All Users:**
   - Method: `GET`
   - URL: ``HTTP://localhost:5000/api/users/list``
   
@@ -115,7 +115,7 @@ json
 		-Use the token in protected requests by passing the header as ``Authorization: Bearer <token>.``
 	
 
--**Search user with ID:** 
+**4.** **Search user with ID:** 
   - Method: `GET`
   - URL: `HTTP://localhost:5000/api/users/:ID`
    - Replace `:id` with your user ID.
@@ -131,7 +131,7 @@ json
     "dateOfBirth": "1967-07-01",
 }
 ```
--**Partial User Update**
+**5.** **Partial User Update**
  - Method: `PATCH`
  - URL: `HTTP://localhost:5000/api/users/:id`
    - Replace `:id` with your user ID.
@@ -155,9 +155,9 @@ json
     "dateOfBirth": "1967-07-01",
 }
 ```
-- **Delete User**
- - Method:`Delete`
- - URL: `HTTP://localhost:5000/api/users/:id`
+**6.** **Delete User**
+  - Method:`Delete`
+  - URL: `HTTP://localhost:5000/api/users/:id`
    - Replace `:id` with your user ID.
 
 **- Example Response:**
