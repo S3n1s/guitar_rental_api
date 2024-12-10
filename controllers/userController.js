@@ -35,14 +35,14 @@ exports.patchUser = async (req, res) => {
 
 exports.getUsers = async (req, res) => {
   try {
-    const { name, email, dateOfBirth, } = req.query;
+    const { sort, name, email, dateOfBirth, } = req.query;
     let filters = {};
 
     if (name) filters.name = { $regex: name, $options: 'i' };
     if (email) filters.email = email;
     if (dateOfBirth) filters.dateOfBirth = dateOfBirth;
   
-    const users = await User.find(filters).lean();
+    const users = await User.find(filters).sort(sort).lean();
     const filteredUsers = users.map((user)=> {
       delete user.password
       return user
